@@ -1,11 +1,11 @@
 <template>
     <div class="flex flex-col h-screen justify-center items-center">
-        <form class="shadow-xl items-center grid gap-6 grid-cols-1 border rounded-lg py-5 px-10">
-            <h1 class="text-black text-center text-xl">ENREGISTREMENT</h1>
+        <form class="shadow-xl items-center grid gap-6 grid-cols-1 border rounded-lg bg-slate-100 py-5 px-10">
+            <h1 class="text-black text-center text-2xl">ENREGISTREMENT</h1>
             <div class="grid gap-8 grid-cols-2">
                 <div>
                     <div>Nom:</div>
-                    <input id="name" class="w-64 px-4 border border-slate-400 "/>
+                    <input id="name" class="w-64 border border-slate-400 "/>
                 </div>
                 <div>
                     <div>Prenom:</div>
@@ -47,16 +47,20 @@
                 </div>
             </div>
             <div>
-                <button type="submit" class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">S'enregistrer</button>
+                <button type="submit" class="py-2 px-4 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">Enregistrer</button>
             </div>
-            <div class="text-center">
-                <p class="italic font-light">Vous avez deja un compte ? <a href="#" class="font-bold text-dark">Cliquez ici</a></p>
+            <div>
+                <p class="text-sm font-light">Vous avez deja un compte ? <a href="#" class="font-bold text-dark underline underline-offset-2">Cliquez ici</a></p>
             </div>
         </form>
     </div>
 </template>
 <script>
 export default {
-    
+    data() {
+        return {
+            name: 'registration'
+        }
+    },
 }
 </script>
