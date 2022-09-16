@@ -50,7 +50,7 @@
                 <button type="submit" class="py-2 px-4 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">Enregistrer</button>
             </div>
             <div>
-                <p class="text-sm font-light">Vous avez deja un compte ? <a href="" class="font-bold text-dark underline underline-offset-2">Cliquez ici</a></p>
+                <p class="text-sm font-light">Vous avez deja un compte ? <RouterLink to="/" class="font-bold text-dark underline underline-offset-2">Se Connecter</RouterLink></p>
             </div>
         </form>
     </div>

@@ -17,15 +17,17 @@
                 <button type="submit" class="py-2 px-4 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">Se Connecter</button>
             </div>
             <hr />
-            <div class="">
-                <p class="text-sm font-light">Vous n'avez pas un compte ? <a href="http://localhost:8080/registration" class="font-bold underline underline-offset-2">Creer</a></p>
+            <div>
+                <p class="text-sm font-light">Vous n'avez pas un compte ? <RouterLink to="./registration" class="font-bold underline underline-offset-2">Creer</RouterLink></p>
                 <p class="text-sm font-light"><a href="#" class="font-light">Mot de Passe Oublie ?</a></p>
             </div>
         </form>
     </div>
 </template>
 <script>
+    
     export default {
+        
         data() {
             return {
                 name: 'login'
