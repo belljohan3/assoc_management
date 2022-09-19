@@ -7,6 +7,7 @@
                 text-3xl rounded-full absolute 
                 -right-3 top-9 border border-dark-purple 
                 cursor-pointer"
+                @click="open = !open"
             />
         </div>
         <div class="p-7">
@@ -17,10 +18,5 @@
 <script setup>
     import BsArrowLeftShort from './icons/BsArrowLeftShort.vue';
     import { ref } from "vue";
-    open () {
-        const open = ref(true);
-        return {
-        open
-        } 
-    }
+    const open = () => { ref(true) };
 </script>
