@@ -27,6 +27,14 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import("../views/Dashboard.vue"),
     },
+    {
+      path: "/usersList",
+      name: "usersList",
+      // route level code-splitting
+      // this generates a separate chunk (usersList.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import("../views/usersList.vue"),
+    }
   ],
 });
 

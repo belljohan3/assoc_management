@@ -1,6 +1,6 @@
 <template>
   <div>
-    <RegistrationForm class="about"/>
+    <RegistrationForm />
   </div>
 </template>
 

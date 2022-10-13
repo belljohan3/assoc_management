@@ -79,6 +79,8 @@
     </div>
 </template>
 
+
+
 <script>
     import { ref } from 'vue';
     import BsArrowLeftShort from './icons/BsArrowLeftShort.vue';

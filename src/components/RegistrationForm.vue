@@ -20,11 +20,11 @@
                     <input id="email" type="email" class="w-64 border border-slate-400" />
                 </div>
                 <div>
-                    <div>Numero:</div>
-                    <input id="number" type="number" class="w-64 border border-slate-400" />
+                    <div>Telephone:</div>
+                    <input id="number" type="number" placeholder="+237" class="w-64 border border-slate-400" />
                 </div>
                 <div>
-                    <div for="church">Ville:</div>
+                    <div for="church">Assemblee:</div>
                     <input class="w-64 border border-slate-400" list="churchs" name="church" id="church">
 
                     <datalist id="churchs">
@@ -41,10 +41,10 @@
                     <div>Mot de Passe:</div>
                     <input type="password" id="password" class="w-64 border border-slate-400" />
                 </div>
-                <div>
+                <!-- <div>
                     <div>Confirmation du Mot de Passe:</div>
                     <input type="password" id="confirmpassword" class="w-64 border border-slate-400" />
-                </div>
+                </div> -->
             </div>
             <div>
                 <button type="submit" class="py-2 px-4 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">Enregistrer</button>
@@ -55,12 +55,19 @@
         </form>
     </div>
 </template>
+
 <script>
+
 export default {
     data () {
         return {
             name: 'registration',
         }
     },
+    methods: {
+        onSelect({name, iso2, dialCode}) {
+        console.log(name, iso2, dialCode);
+    },
+  },
 }
 </script>
