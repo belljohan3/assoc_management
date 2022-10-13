@@ -1,135 +1,56 @@
-<!-- <template>
-    <div>
-        <router-view :to="{ name: 'Create' }" class="button is-success mt-5">Add New</router-view>
-        <table class="table-auto">
-            <thead>
-                <tr>
-                    <th>NOM</th>
-                    <th>PRENOM</th>
-                    <th>DATE DE NAISSANCE</th>
-                    <th>EMAIL</th>
-                    <th>TELEPHONE</th>
-                    <th>ASSEMBLEE</th>
-                    <th class="has-text-centered">ACTIONS</th>
+<template>    
+    <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+        <table class="w-full text-sm text-left text-black dark:text-gray-400">
+            <thead class="text-xl text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr class="bg-green-700 text-white">
+                    <th scope="col" class="py-3 px-6">ID</th>
+                    <th scope="col" class="py-3 px-6">Nom</th>
+                    <th scope="col" class="py-3 px-6">Prenom</th>
+                    <th scope="col" class="py-3 px-6">Date de Naissance</th>
+                    <th scope="col" class="py-3 px-6">Email</th>
+                    <th scope="col" class="py-3 px-6">Telephone</th>
+                    <th scope="col" class="py-3 px-6">Assemblee</th>
+                    <th scope="col" class="py-3 px-6">Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="item in items" :key="item.user_id">
-                    <td>{{ item.user_name }}</td>
-                    <td>{{ item.user_surname }}</td>
-                    <td>{{ item.user_dob }}</td>
-                    <td>{{ item.user_email }}</td>
-                    <td>{{ item.user_phone }}</td>
-                    <td>{{ item.user_church }}</td>
-                    <td>{{ items }}</td>
-                    <td class="has-text-centered">
-                        <router-link
-                        :to="{ name: 'Edit', params: { id: item.user_id } }"
-                        class="button is-info is-small"
-                        >Edit</router-link>
-                        <a
-                        class="button is-danger is-small"
-                        @click="deleteProduct(item.user_id)"
-                        >Delete</a>
+                <tr v-for="item in items" :key="item.user_id" class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                    <th scope="row" class="py-4 px-6 font-bold text-gray-900 whitespace-nowrap dark:text-white">
+                        {{ item.user_id}}
+                    </th>
+                    <td class="py-4 px-6">
+                        {{ item.user_name }}
+                    </td>
+                    <td class="py-4 px-6">
+                        {{ item.user_surname }}
+                    </td>
+                    <td class="py-4 px-6">
+                        {{ item.user_dob }}
+                    </td>
+                    <td class="py-4 px-6">
+                        {{ item.user_email }}
+                    </td>
+                    <td class="py-4 px-6">
+                        {{ item.user_phone }}
+                    </td>
+                    <td class="py-4 px-6">
+                        {{ item.user_church }}
+                    </td>
+                    <td class="py-4 px-6 space-x-2">
+                        <!-- <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a> -->
+                        <a class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                            :to="{ name: 'Edit', params: { id: item.user_id } }">
+                            Edit
+                        </a>
+                        <a class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" 
+                            @click="deleteProduct(item.user_id)">
+                            Delete
+                        </a>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
-</template> -->
-
-<!-- <template>
-    <table class="table-auto">
-        <thead>
-            <tr>
-                <th>NOM</th>
-                <th>PRENOM</th>
-                <th>DATE DE NAISSANCE</th>
-                <th>EMAIL</th>
-                <th>TELEPHONE</th>
-                <th>ASSEMBLEE</th>
-                <th>ACTIONS</th> 
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-for="item in items" :key="item.user_id">
-                <td>{{ items }}</td>
-                <td>{{ item.user_name }}</td>
-                <td>{{ item.user_surname }}</td>
-                <td>{{ item.user_dob }}</td>
-                <td>{{ item.user_email }}</td>
-                <td>{{ item.user_phone }}</td>
-                <td>{{ item.user_church }}</td>
-                <td class="has-text-centered">
-                    <router-link
-                    :to="{ name: 'Edit', params: { id: item.user_id } }"
-                    class="button is-info is-small"
-                    >Edit</router-link>
-                    <a
-                    class="button is-danger is-small"
-                    @click="deleteProduct(item.user_id)"
-                    >Delete</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</template> -->
-
-<template>
-    
-<div class="overflow-x-auto relative shadow-md sm:rounded-lg">
-    <table class="w-full text-sm text-left text-black dark:text-gray-400">
-        <thead class="text-xl text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-            <tr class="bg-green-700 text-white">
-                <th scope="col" class="py-3 px-6">ID</th>
-                <th scope="col" class="py-3 px-6">Nom</th>
-                <th scope="col" class="py-3 px-6">Prenom</th>
-                <th scope="col" class="py-3 px-6">Date de Naissance</th>
-                <th scope="col" class="py-3 px-6">Email</th>
-                <th scope="col" class="py-3 px-6">Telephone</th>
-                <th scope="col" class="py-3 px-6">Assemblee</th>
-                <th scope="col" class="py-3 px-6">Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-for="item in items" :key="item.user_id" class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                <th scope="row" class="py-4 px-6 font-bold text-gray-900 whitespace-nowrap dark:text-white">
-                    {{ item.user_id}}
-                </th>
-                <td class="py-4 px-6">
-                    {{ item.user_name }}
-                </td>
-                <td class="py-4 px-6">
-                    {{ item.user_surname }}
-                </td>
-                <td class="py-4 px-6">
-                    {{ item.user_dob }}
-                </td>
-                <td class="py-4 px-6">
-                    {{ item.user_email }}
-                </td>
-                <td class="py-4 px-6">
-                    {{ item.user_phone }}
-                </td>
-                <td class="py-4 px-6">
-                    {{ item.user_church }}
-                </td>
-                <td class="py-4 px-6 space-x-2">
-                    <!-- <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a> -->
-                    <a class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-                        :to="{ name: 'Edit', params: { id: item.user_id } }">
-                        Edit
-                    </a>
-                    <a class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" 
-                        @click="deleteProduct(item.user_id)">
-                        Delete
-                    </a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
 </template>
 
 <script>
